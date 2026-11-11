@@ -1,0 +1,584 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#f8c9e4">
+<title>Graduation - Nadira Maulidia Rahmi</title>
+
+<style>
+*{
+ margin:0;
+ padding:0;
+ box-sizing:border-box;
+}
+
+html{scroll-behavior:smooth}
+
+body{
+ font-family:'Trebuchet MS',Arial,sans-serif;
+ background:linear-gradient(180deg,#ffe0ef,#e7dcff,#e0f5ff);
+ color:#70436f;
+ width:100%;
+ overflow-x:hidden;
+}
+
+#opening{
+ position:fixed;
+ inset:0;
+ z-index:100;
+ display:flex;
+ flex-direction:column;
+ align-items:center;
+ justify-content:center;
+ text-align:center;
+ padding:25px;
+ background:linear-gradient(145deg,#ffd5e9,#d9ccff);
+}
+
+.envelope{
+ font-size:100px;
+ animation:float 2s infinite;
+}
+
+@keyframes float{
+ 50%{transform:translateY(-18px) rotate(5deg)}
+}
+
+#opening h1{
+ font-size:34px;
+ color:#a34491;
+ margin:20px 0;
+}
+
+#opening p{
+ font-size:15px;
+ line-height:1.9;
+}
+
+button{
+ border:0;
+ border-radius:35px;
+ background:#b44898;
+ color:white;
+ padding:16px 25px;
+ font-size:15px;
+ font-weight:bold;
+ margin-top:22px;
+ cursor:pointer;
+ box-shadow:0 5px 15px #0002;
+}
+
+button:active{transform:scale(.95)}
+
+#mainContent{
+ display:none;
+ width:100%;
+}
+
+header{
+ padding:50px 17px 30px;
+ text-align:center;
+}
+
+.toga{
+ font-size:90px;
+ animation:float 2s infinite;
+}
+
+header h1{
+ font-size:43px;
+ color:#a34491;
+ text-shadow:3px 3px white;
+ margin:15px 0;
+}
+
+header p{
+ font-size:15px;
+ line-height:1.9;
+}
+
+section{padding:15px 13px}
+
+.card{
+ width:100%;
+ max-width:500px;
+ margin:12px auto;
+ padding:25px 18px;
+ background:#ffffffed;
+ border-radius:24px;
+ box-shadow:0 7px 20px #9c64a322;
+ text-align:center;
+}
+
+.card h2{
+ color:#a34491;
+ font-size:21px;
+ margin-bottom:18px;
+}
+
+.message{
+ font-size:15px;
+ line-height:1.95;
+}
+
+.name{
+ font-size:25px;
+ line-height:1.5;
+ color:#a34491;
+ font-weight:bold;
+ margin:15px 0;
+}
+
+.gallery{
+ display:grid;
+ grid-template-columns:1fr 1fr;
+ gap:10px;
+}
+
+.gallery img{
+ width:100%;
+ height:190px;
+ object-fit:cover;
+ border-radius:16px;
+ border:4px solid white;
+ box-shadow:0 4px 12px #0002;
+}
+
+.quote{
+ font-size:16px;
+ font-style:italic;
+ line-height:2;
+ color:#984a89;
+}
+
+#surprise{
+ display:none;
+ margin-top:20px;
+ font-size:15px;
+ line-height:2;
+ color:#a34491;
+}
+
+#waButton{
+ display:none;
+}
+
+#waButton button{
+ background:#20b968;
+ width:100%;
+}
+
+#scrollInfo{
+ margin-top:20px;
+ color:#a34491;
+ font-size:13px;
+}
+
+footer{
+ background:#ad478f;
+ color:white;
+ padding:30px 15px;
+ text-align:center;
+ line-height:2;
+ font-size:14px;
+}
+
+#confetti{
+ position:fixed;
+ inset:0;
+ overflow:hidden;
+ pointer-events:none;
+ z-index:200;
+}
+
+.piece{
+ position:absolute;
+ top:-40px;
+ animation:fall linear forwards;
+}
+
+@keyframes fall{
+ to{
+  transform:translateY(110vh) rotate(900deg);
+  opacity:0;
+ }
+}
+
+@media(max-width:380px){
+ header h1{font-size:37px}
+ .gallery img{height:150px}
+ .card{padding:22px 14px}
+ .name{font-size:22px}
+}
+
+@media(min-width:600px){
+ .card{max-width:520px}
+ .gallery img{height:230px}
+}
+</style>
+</head>
+
+<body>
+
+<div id="confetti"></div>
+
+<!-- HALAMAN PEMBUKA -->
+<div id="opening">
+ <div class="envelope">💌</div>
+
+ <h1>Special Graduation!</h1>
+
+ <p>
+  Ada sebuah ucapan spesial<br>
+  untuk seseorang yang luar biasa.<br>
+  Siap membuka kejutan hari ini Tan? 🥰
+ </p>
+
+ <button onclick="openWisuda()">
+  💌 BUKA UCAPAN
+ </button>
+</div>
+
+<!-- MUSIK -->
+<audio id="music" src="lagu.mp3" loop preload="auto"></audio>
+
+<!-- HALAMAN UTAMA -->
+<div id="mainContent">
+
+<header>
+ <div class="toga">🎓</div>
+
+ <h1>HAPPY<br>GRADUATION!</h1>
+
+ <p>
+  Selamat atas gelar barunya! 🥳<br>
+  Hari ini adalah bukti bahwa perjuangan<br>
+  tidak pernah mengkhianati hasil.
+ </p>
+
+ <div class="card" style="margin-top:25px">
+  <p style="font-size:15px;color:#a34491">
+   🌸 SPECIAL DAY FOR 🌸
+  </p>
+
+  <div class="name">
+   NADIRA MAULIDIA RAHMI
+  </div>
+
+  <p style="font-size:20px;font-weight:bold">
+   S.Pd. 🎓
+  </p>
+
+  <p style="margin-top:15px;line-height:1.8">
+   Satu gelar berhasil diraih,<br>
+   sejuta mimpi siap diperjuangkan. ❤️
+  </p>
+ </div>
+</header>
+
+<section>
+ <div class="card">
+  <h2>💌 Sepucuk Ucapan</h2>
+
+  <p class="message">
+   Selamat wisuda, Nadira! ❤️<br><br>
+
+   Akhirnya sampai juga di hari yang
+   selama ini kamu impikan.<br><br>
+
+   Dari revisi yang tidak ada ujungnya,
+   dosen pembimbing penuh kejutan,
+   sampai begadang ditemani kopi dan air mata.<br><br>
+
+   Hari ini semua perjuangan itu berubah
+   menjadi sebuah kebanggaan.<br><br>
+
+   Toga yang kamu lempar hari ini bukan
+   sekadar kain di atas kepala,
+   tetapi simbol bahwa kamu pernah berjuang
+   dan tidak menyerah.<br><br>
+
+   Kamu hebat, Nadira!
+  </p>
+ </div>
+</section>
+
+<section>
+ <div class="card">
+  <h2>📸 Galeri Kenangan</h2>
+
+  <p style="font-size:14px;margin-bottom:18px">
+   Setiap foto punya cerita yang indah ❤️
+  </p>
+
+  <div class="gallery">
+   <img src="fotowisuda1.jpeg" alt="Kenangan 1">
+   <img src="fotowisuda2.jpeg" alt="Kenangan 2">
+   <img src="fotowisuda3.jpeg" alt="Kenangan 3">
+  </div>
+ </div>
+</section>
+
+<section>
+ <div class="card">
+  <h2>😂 Sedikit Humor Wisuda</h2>
+
+  <p class="message">
+   Selamat! Sekarang kamu resmi menjadi sarjana.<br>
+   Gelar sudah di tangan,<br>
+   tapi pertanyaan keluarga tetap sama:<br><br>
+
+   <b>"Kapan nikah, Nadira?" 🤣</b><br><br>
+      <b>"Lanjut S3, Nadira?" 🤣</b><br><br>
+
+   Tenang, skripsi saja berhasil ditaklukkan.
+   Masa depan juga pasti bisa dihadapi!<br><br>
+
+   Semoga setelah ini bukan cuma gelar
+   yang bertambah, tetapi juga isi rekening! 💸
+  </p>
+ </div>
+</section>
+
+<section>
+ <div class="card">
+  <h2>🌷 Sebuah Makna</h2>
+
+  <p class="quote">
+   "Tidak semua perjalanan harus cepat,
+   tidak semua keberhasilan datang tepat waktu.
+   Namun, setiap langkah kecil yang kamu perjuangkan
+   tetap layak dirayakan."<br><br>
+
+   Jangan takut bermimpi lebih tinggi.
+   Hari ini kamu membuktikan bahwa
+   sesuatu yang dahulu terasa mustahil
+   ternyata bisa menjadi kenyataan.<br><br>
+
+   Teruslah melangkah, Nadira.
+   Dunia masih menunggu cerita hebatmu.
+  </p>
+ </div>
+</section>
+
+<section>
+ <div class="card">
+  <h2>💗 Terima Kasih, Nadira!</h2>
+
+  <p class="message">
+   Untuk Nadira Maulidia Rahmi, S.Pd.<br><br>
+
+   Terima kasih sudah menjadi alasan
+   terciptanya halaman kecil yang penuh
+   kebahagiaan ini, kamu hebatt tannnnn.<br><br>
+
+   Semoga setiap perjuangan yang telah
+   kamu lalui menjadi cerita indah
+   yang selalu bisa kamu banggakan.<br><br>
+
+   Jangan berhenti bermimpi,
+   jangan takut melangkah,
+   dan jangan lupa bahagia.<br><br>
+
+   Karena gelar ini bukan akhir cerita,
+   melainkan awal dari perjalanan hebatmu.<br><br>
+
+   Tetaplah menjadi Nadira yang ceria,
+   kuat, dan luar biasa. ❤️<br><br>
+
+   <b>With love, from the creator. 💌</b>
+  </p>
+ </div>
+</section>
+
+<section>
+ <div class="card">
+  <h2>🎁 Pesan dari ade angkatmu</h2>
+
+  <p class="quote">
+   "Mungkin halaman ini sederhana,
+   tetapi dibuat dengan penuh perhatian
+   untuk merayakan seseorang yang istimewa.<br><br>
+
+   Semoga setiap kali membukanya,
+   kamu selalu ingat bahwa keberhasilanmu
+   layak dirayakan dan semua hal apapun entah kecil atau besar harus di rayakan."
+  </p>
+
+  <p style="margin-top:20px;font-weight:bold;color:#a34491">
+   Terima kasih sudah menjadi bagian
+   dari cerita indah ini. ❤️
+  </p>
+ </div>
+</section>
+
+<section>
+ <div class="card">
+  <h2>🎉 Kejutan Untuk Nadira!</h2>
+
+  <button onclick="showSurprise()">
+   KLIK INI TANTE SAYANG ❤️
+  </button>
+
+  <div id="surprise">
+   🎉 SELAMAT WISUDA, NADIRA "Yeyey!" " 🎉<br><br>
+
+   Semoga langkahmu selalu dimudahkan,
+   rezekimu dilapangkan,
+   cita-citamu tercapai,
+   dan kebahagiaan selalu menyertaimu.<br><br>
+
+   Jangan pernah berhenti menjadi
+   seseorang yang membanggakan! ❤️<br><br>
+
+   <b>WE ARE PROUD OF YOU! 🥹</b>
+  </div>
+ </div>
+</section>
+
+<!-- BAGIAN AKHIR DAN WHATSAPP -->
+<section id="akhirUcapan">
+ <div class="card">
+  <h2>💌 Sampai di Ujung Cerita</h2>
+
+  <p class="message">
+   Terima kasih sudah membaca sampai akhir,
+   Nadira! ❤️<br><br>
+
+   Kalau kamu sudah membuka semua ucapan ini,
+   ada satu hal kecil yang ingin Ade tahu.<br><br>
+
+   <b>Sudah dibaca sampai selesai? 🥰</b>
+  </p>
+
+  <div id="waButton">
+   <button onclick="kirimWA()">
+    💚 KIRIM UCAPAN KE WHATSAPP RAMDANI BOCIL
+   </button>
+
+   <p style="font-size:12px;margin-top:15px">
+    Klik untuk mengirim pesan bahwa kamu sudah membuka ucapan ini.
+   </p>
+  </div>
+
+  <p id="scrollInfo">
+   👇 Scroll sampai bagian paling bawah untuk membuka tombol.
+  </p>
+ </div>
+</section>
+
+<footer>
+ <h2>🎓 Congratulations, Nadira!</h2>
+
+ NADIRA MAULIDIA RAHMI, S.Pd.<br>
+
+ Terima kasih sudah berjuang sejauh ini.<br>
+ Ini bukan akhir, ini adalah awal yang baru. ❤️<br><br>
+
+ Made with ❤️ for Nadira.
+</footer>
+
+</div>
+
+<script>
+let opened=false;
+let tombolMuncul=false;
+
+// BUKA UCAPAN DAN PUTAR MUSIK
+function openWisuda(){
+ if(opened)return;
+ opened=true;
+
+ document.getElementById("opening").style.display="none";
+ document.getElementById("mainContent").style.display="block";
+
+ const music=document.getElementById("music");
+
+ music.play().catch(()=>{
+  console.log("Browser membatasi pemutaran musik.");
+ });
+
+ celebrate();
+ window.scrollTo(0,0);
+}
+
+// ANIMASI CONFETTI DAN LEMPAR TOGA
+function celebrate(){
+ const box=document.getElementById("confetti");
+ const emojis=["🎉","✨","🎊","💖","⭐","🎓"];
+
+ for(let i=0;i<100;i++){
+  const p=document.createElement("div");
+  p.className="piece";
+  p.textContent=emojis[Math.floor(Math.random()*emojis.length)];
+  p.style.left=Math.random()*100+"vw";
+  p.style.fontSize=(15+Math.random()*25)+"px";
+  p.style.animationDuration=(2+Math.random()*4)+"s";
+
+  box.appendChild(p);
+  setTimeout(()=>p.remove(),6500);
+ }
+
+ const hat=document.createElement("div");
+ hat.textContent="🎓";
+
+ hat.style.cssText=
+ "position:fixed;left:50%;top:45%;font-size:90px;z-index:250;transition:1.5s;";
+
+ document.body.appendChild(hat);
+
+ requestAnimationFrame(()=>{
+  hat.style.transform="translate(-50%,-450px) rotate(720deg)";
+  hat.style.opacity="0";
+ });
+
+ setTimeout(()=>hat.remove(),1700);
+}
+
+// KEJUTAN
+function showSurprise(){
+ document.getElementById("surprise").style.display="block";
+ celebrate();
+}
+
+// DETEKSI SCROLL SAMPAI PALING BAWAH
+window.addEventListener("scroll",function(){
+
+ if(!opened || tombolMuncul)return;
+
+ const posisi=window.innerHeight+window.scrollY;
+ const tinggi=document.documentElement.scrollHeight;
+
+ if(posisi>=tinggi-30){
+
+  tombolMuncul=true;
+
+  document.getElementById("waButton").style.display="block";
+
+  document.getElementById("scrollInfo").innerHTML=
+   "🎉 Hore! nadira sudah sampai di akhir ucapan ini ! ❤️";
+
+  celebrate();
+ }
+});
+
+// KIRIM PESAN WHATSAPP
+function kirimWA(){
+
+ // GANTI NOMOR INI DENGAN NOMOR WHATSAPP PEMBUAT
+ const nomor="12494440992";
+
+ const pesan=
+ "Halo! ade, Aku sudah buka dan membaca semua ucapan wisudanya. Terima kasih banyak atas ucapan selamat dan doa indahnya! 🎓🥰";
+
+ const link=
+ "https://wa.me/"+nomor+"?text="+encodeURIComponent(pesan);
+
+ window.open(link,"_blank");
+}
+</script>
+
+</body>
+</html>
